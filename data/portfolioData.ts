@@ -1,9 +1,4 @@
-import {
-  ProfileData,
-  Project,
-  SkillCategory,
-  Testimonial,
-} from "../types";
+import { ProfileData, Project, SkillCategory, Testimonial } from "../types";
 
 export const profileData: ProfileData = {
   name: "Shoaib Uddin",
@@ -16,6 +11,7 @@ export const profileData: ProfileData = {
     linkedin: "https://linkedin.com/in/shoaibramim",
     github: "https://github.com/shoaibramim",
     huggingface: "https://huggingface.co/shoaibramim",
+    behance: "https://www.behance.net/shoaibramim",
   },
 };
 
@@ -77,7 +73,7 @@ export const projectsData: Project[] = [
     id: "voter-slip",
     title: "Voter Slip Generator",
     description:
-      "Developed an end-to-end web application that processes layout-specific PDFs to extract Bengali text and generate structured JSON for automated voter slip creation with custom designs.",
+      "Developed an end-to-end web application that processes layout-specific PDFs to extract Bengali text and generate structured JSON for automated voter slip creation with customizable designs, using a backend pipeline built with YOLOv8n, Python, and Tesseract OCR, exposed via APIs to a React (Vite) + TypeScript frontend deployed on Vercel.",
     image: "/voter_slip_generator.png",
     tags: [
       "React",

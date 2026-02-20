@@ -40,5 +40,6 @@ export interface ProfileData {
     github: string;
     twitter?: string;
     huggingface?: string;
+    behance?: string;
   };
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { profileData } from "../../data/portfolioData";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaBehance } from "react-icons/fa";
 
 export const Footer: React.FC = () => {
   return (
@@ -29,6 +29,15 @@ export const Footer: React.FC = () => {
           >
             <span className="sr-only">LinkedIn</span>
             <FaLinkedin size={24} />
+          </a>
+          <a
+            href={profileData.socials.behance}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-accent transition-colors"
+          >
+            <span className="sr-only">Behance</span>
+            <FaBehance size={24} />
           </a>
         </div>
       </div>
