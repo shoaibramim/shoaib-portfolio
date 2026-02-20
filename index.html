@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoaib Uddin | AI Engineer & Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Shoaib Uddin, specializing in AI/ML, Full-Stack Development, and UI/UX Design."
+    />
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // 60:20:10 Design System
+              bgPrimary: "#121212", // 60%
+              bgSecondary: "#1E1E1E", // 20%
+              accent: "#5C47FF", // 10%  Green: #22B05D   Purplish Blue: #5C47FF
+              textPrimary: "#F5F5F5",
+              textSecondary: "#B3B3B3",
+            },
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+            animation: {
+              "gradient-x": "gradient-x 15s ease infinite",
+              blob: "blob 7s infinite",
+            },
+            keyframes: {
+              "gradient-x": {
+                "0%, 100%": {
+                  "background-size": "200% 200%",
+                  "background-position": "left center",
+                },
+                "50%": {
+                  "background-size": "200% 200%",
+                  "background-position": "right center",
+                },
+              },
+              blob: {
+                "0%": { transform: "translate(0px, 0px) scale(1)" },
+                "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                "100%": { transform: "translate(0px, 0px) scale(1)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          @apply bg-bgPrimary text-textPrimary font-sans antialiased overflow-x-hidden selection:bg-accent selection:text-white;
+        }
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        @apply bg-bgPrimary;
+      }
+      ::-webkit-scrollbar-thumb {
+        @apply bg-bgSecondary rounded-full border border-bgPrimary;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        @apply bg-accent;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://esm.sh/react@^19.2.4/",
+          "react": "https://esm.sh/react@^19.2.4",
+          "framer-motion": "https://esm.sh/framer-motion@^12.34.2",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
