@@ -101,7 +101,12 @@ export const Contact: React.FC = () => {
               </div>
               <div>
                 <div className="text-sm text-gray-500">Email</div>
-                <a href={`mailto:${profileData.email}`} className="font-medium">
+                <a
+                  href={`mailto:${profileData.email}`}
+                  className="font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {profileData.email}
                 </a>
               </div>
@@ -145,7 +150,7 @@ export const Contact: React.FC = () => {
         >
           <form
             onSubmit={handleSubmit}
-            className="bg-bgSecondary p-8 rounded-2xl border border-gray-800 space-y-6 relative overflow-hidden"
+            className="bg-bgSecondary p-8 rounded-2xl border border-gray-800 space-y-6 relative overflow-hidden hover:shadow-lg hover:shadow-accent/10 transition-all duration-300"
           >
             {/* Success Overlay */}
             <AnimatePresence>

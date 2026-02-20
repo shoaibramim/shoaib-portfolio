@@ -18,7 +18,7 @@ export const Projects: React.FC = () => {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="group flex flex-col bg-bgSecondary rounded-2xl overflow-hidden border border-gray-800 hover:border-accent/40 transition-all duration-300 h-full"
+            className="group flex flex-col bg-bgSecondary rounded-2xl overflow-hidden border border-gray-800 hover:border-accent hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 h-full"
           >
             {/* Image Container */}
             <div className="relative h-48 overflow-hidden bg-gray-900">
@@ -69,7 +69,7 @@ export const Projects: React.FC = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-textSecondary hover:text-white transition-colors flex items-center gap-2 text-sm font-medium"
+                    className="text-textSecondary hover:text-accent transition-colors flex items-center gap-2 text-sm font-medium"
                   >
                     <svg
                       className="w-4 h-4"
@@ -90,7 +90,7 @@ export const Projects: React.FC = () => {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-textSecondary hover:text-white transition-colors flex items-center gap-2 text-sm font-medium"
+                    className="text-textSecondary hover:text-accent transition-colors flex items-center gap-2 text-sm font-medium"
                   >
                     <svg
                       className="w-4 h-4"
@@ -113,7 +113,7 @@ export const Projects: React.FC = () => {
                     href={project.figmaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-textSecondary hover:text-white transition-colors flex items-center gap-2 text-sm font-medium"
+                    className="text-textSecondary hover:text-accent transition-colors flex items-center gap-2 text-sm font-medium"
                   >
                     <svg
                       className="w-4 h-4"

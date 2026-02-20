@@ -13,11 +13,49 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // On direct URL load (e.g. /about), scroll to the matching section
+  useEffect(() => {
+    const sectionId = window.location.pathname.replace(/^\//, "");
+    if (sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const navbarHeight = 80;
+        const top =
+          element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }
+  }, []);
+
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const navbarHeight = 80;
+        const top =
+          element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+        window.scrollTo({ top, behavior: "smooth" });
+        history.pushState(null, "", `/${sectionId}`);
+      }
+    }, 300);
+  };
+
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    history.pushState(null, "", "/");
+  };
+
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Reviews", href: "#reviews" },
+    { name: "About", id: "about" },
+    { name: "Skills", id: "skills" },
+    { name: "Projects", id: "projects" },
+    { name: "Reviews", id: "reviews" },
   ];
 
   return (
@@ -30,7 +68,8 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <a
-          href="#"
+          href="/"
+          onClick={scrollToTop}
           className="text-2xl font-bold tracking-tighter text-textPrimary flex items-center gap-2"
         >
           <span className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-sm">
@@ -44,14 +83,16 @@ export const Navbar: React.FC = () => {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={`/${link.id}`}
+              onClick={(e) => scrollToSection(e, link.id)}
               className="text-textSecondary hover:text-accent transition-colors text-sm font-medium tracking-wide"
             >
               {link.name}
             </a>
           ))}
           <a
-            href="#contact"
+            href="/contact"
+            onClick={(e) => scrollToSection(e, "contact")}
             className="px-5 py-2 rounded-full border border-bgSecondary hover:border-accent text-sm font-medium transition-all"
           >
             Hire Me
@@ -101,13 +142,20 @@ export const Navbar: React.FC = () => {
               {navLinks.map((link) => (
                 <a
                   key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-textSecondary hover:text-accent text-base font-medium py-2 border-b border-gray-800 last:border-0"
+                  href={`/${link.id}`}
+                  onClick={(e) => scrollToSection(e, link.id)}
+                  className="text-textSecondary hover:text-accent text-base font-medium py-2 border-b border-gray-800"
                 >
                   {link.name}
                 </a>
               ))}
+              <a
+                href="/contact"
+                onClick={(e) => scrollToSection(e, "contact")}
+                className="mt-2 px-5 py-3 rounded-full border border-accent text-accent hover:bg-accent hover:text-white text-sm font-medium text-center transition-all"
+              >
+                Hire Me
+              </a>
             </div>
           </motion.div>
         )}

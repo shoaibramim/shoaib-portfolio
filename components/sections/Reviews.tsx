@@ -16,7 +16,7 @@ export const Reviews: React.FC = () => {
             <h3 className="text-2xl font-bold text-white mb-6 border-b border-gray-800 pb-2">
               Video Editing and Graphics Designing
             </h3>
-            <div className="bg-bgSecondary p-6 rounded-2xl border border-gray-800">
+            <div className="bg-bgSecondary p-6 rounded-2xl border border-gray-800 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300">
               <h4 className="text-xl font-semibold text-accent mb-2">
                 Davinci Resolve Studio and Adobe Tools Expert
               </h4>
@@ -51,7 +51,7 @@ export const Reviews: React.FC = () => {
             <h3 className="text-2xl font-bold text-white mb-6 border-b border-gray-800 pb-2">
               Pastimes
             </h3>
-            <div className="bg-bgSecondary p-6 rounded-2xl border border-gray-800">
+            <div className="bg-bgSecondary p-6 rounded-2xl border border-gray-800 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300">
               <h4 className="text-xl font-semibold text-accent mb-2">
                 Watching Football, Movies, TV Shows, Anime and Playing Video
                 Games!
@@ -80,7 +80,7 @@ export const Reviews: React.FC = () => {
             {testimonialsData.map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="relative bg-bgSecondary p-6 rounded-2xl border border-gray-800"
+                className="relative bg-bgSecondary p-6 rounded-2xl border border-gray-800 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300"
               >
                 <svg
                   className="absolute top-4 right-4 w-8 h-8 text-gray-800"

@@ -11,6 +11,13 @@ import { Footer } from "./components/layout/Footer";
 function App() {
   return (
     <div className="min-h-screen bg-bgPrimary flex flex-col relative selection:bg-accent/30 selection:text-white">
+      {/* Global Animated Background Blobs */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-[350px] h-[350px] bg-accent/10 rounded-full filter blur-[100px] animate-blob"></div>
+        <div className="absolute top-1/2 right-1/4 w-[350px] h-[350px] bg-purple-900/20 rounded-full filter blur-[100px] animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-[350px] h-[350px] bg-gray-700/30 rounded-full filter blur-[100px] animate-blob animation-delay-4000"></div>
+      </div>
+
       {/* Global Background Noise Texture (Subtle) */}
       <div
         className="fixed inset-0 opacity-[0.015] z-0 pointer-events-none"

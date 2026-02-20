@@ -111,7 +111,7 @@ export const About: React.FC = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className={`bg-bgSecondary p-6 rounded-2xl border border-gray-800 hover:border-accent/50 transition-colors group ${index === 2 ? "sm:col-span-2" : ""}`}
+              className={`bg-bgSecondary p-6 rounded-2xl border border-gray-800 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 group ${index === 2 ? "sm:col-span-2" : ""}`}
             >
               {card.icon}
               <h3 className="text-xl font-semibold text-white mb-2">

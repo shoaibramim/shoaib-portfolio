@@ -14,7 +14,7 @@ export const Skills: React.FC = () => {
               hidden: { opacity: 0, scale: 0.95 },
               visible: { opacity: 1, scale: 1 }
             }}
-            className="bg-bgSecondary rounded-2xl p-6 border border-gray-800 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
+            className="bg-bgSecondary rounded-2xl p-6 border border-gray-800 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300"
           >
             <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
               <span className="w-8 h-1 bg-accent rounded-full inline-block"></span>
