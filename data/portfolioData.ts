@@ -3,7 +3,6 @@ import {
   Project,
   SkillCategory,
   Testimonial,
-  CPProfile,
 } from "../types";
 
 export const profileData: ProfileData = {
@@ -16,6 +15,7 @@ export const profileData: ProfileData = {
   socials: {
     linkedin: "https://linkedin.com/in/shoaibramim",
     github: "https://github.com/shoaibramim",
+    huggingface: "https://huggingface.co/shoaibramim",
   },
 };
 
@@ -68,7 +68,6 @@ export const skillsData: SkillCategory[] = [
       { name: "Canva" },
       { name: "Adobe Tools" },
       { name: "DaVinci Resolve" },
-      
     ],
   },
 ];
@@ -80,7 +79,16 @@ export const projectsData: Project[] = [
     description:
       "Developed an end-to-end web application that processes layout-specific PDFs to extract Bengali text and generate structured JSON for automated voter slip creation with custom designs.",
     image: "/voter_slip_generator.png",
-    tags: ["React", "TypeScript", "HuggingFace", "Python", "YOLOv8n", "Tesseract OCR", "Vercel", "PDF Generation"],
+    tags: [
+      "React",
+      "TypeScript",
+      "HuggingFace",
+      "Python",
+      "YOLOv8n",
+      "Tesseract OCR",
+      "Vercel",
+      "PDF Generation",
+    ],
     githubUrl: "https://github.com/shoaibramim/VoterSlip-Generator",
     liveUrl: "https://voter-slip-generator.vercel.app/",
     category: "Full-Stack",
@@ -91,7 +99,16 @@ export const projectsData: Project[] = [
     description:
       "Fine-tuned and evaluated deep learning models for cotton leaf disease detection using Python, TensorFlow, and Scikit-learn across varied augmentation, class balancing, dropout, and learning rate settings.",
     image: "/CLDD.png",
-    tags: ["Deep Learning", "Computer Vision", "Python", "TensorFlow", "Scikit-learn", "React", "HuggingFace", "Vercel"],
+    tags: [
+      "Deep Learning",
+      "Computer Vision",
+      "Python",
+      "TensorFlow",
+      "Scikit-learn",
+      "React",
+      "HuggingFace",
+      "Vercel",
+    ],
     githubUrl: "https://github.com/shoaibramim/CLDD",
     liveUrl: "https://cottonguard.vercel.app/",
     category: "AI/ML",
@@ -102,7 +119,14 @@ export const projectsData: Project[] = [
     description:
       "Designed the UI in Figma and implemented the app using React Native and Firebase, and added interactive features: real-time comments, reactions, rating, Google Maps, pagination, and animations using Reanimated and GSAP.",
     image: "/Krishibid_UI_Promo.jpg",
-    tags: ["React Native", "Firebase", "Figma", "TensorFlow lite", "Reanimated", "GSAP"],
+    tags: [
+      "React Native",
+      "Firebase",
+      "Figma",
+      "TensorFlow lite",
+      "Reanimated",
+      "GSAP",
+    ],
     githubUrl: "https://github.com/shoaibramim/Krishibid",
     liveUrl: "https://appetize.io/app/b_fc3ajqenc6ejwcdketfo4egcsu",
     category: "Mobile App",
@@ -114,7 +138,8 @@ export const projectsData: Project[] = [
       "Designed an accessible, user-centered mobile interface in Figma for a multinational client, ensuring seamless alignment with functionality.",
     image: "/ZAS_Med_App_UI.jpg",
     tags: ["Figma"],
-    figmaUrl: "https://www.figma.com/proto/IAOY9PeXuSZZ0XrC7V9cSA?node-id=0-1&t=1yGif17kzkJ9Cpev-6",
+    figmaUrl:
+      "https://www.figma.com/proto/IAOY9PeXuSZZ0XrC7V9cSA?node-id=0-1&t=1yGif17kzkJ9Cpev-6",
     category: "UI/UX",
   },
   {
@@ -126,21 +151,6 @@ export const projectsData: Project[] = [
     tags: ["React", "Figma", "Shadcn UI", "Tailwind CSS", "TypeScript"],
     githubUrl: "#",
     category: "Frontend",
-  },
-];
-
-export const cpData: CPProfile[] = [
-  {
-    platform: "Codeforces",
-    rating: "Newbie",
-    solved: 183,
-    url: "#",
-  },
-  {
-    platform: "LeetCode",
-    rating: "Unrated",
-    solved: 20,
-    url: "#",
   },
 ];
 
@@ -159,6 +169,14 @@ export const testimonialsData: Testimonial[] = [
     role: "Literature Reviewer",
     company: "A NovelTea Podcast",
     text: "Great to work with! Good communication and solid work.",
+    rating: 5,
+  },
+  {
+    id: "t3",
+    name: "Jude Bunney",
+    role: "Client",
+    company: "Fiverr",
+    text: "It was a pleasure working with Shoaib! He was professional and polite and create some amazing social media content for our cricket club. We are already getting feedback on how great the posts look already. Thanks Shoaib!",
     rating: 5,
   },
 ];

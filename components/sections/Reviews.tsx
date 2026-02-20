@@ -1,69 +1,72 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Section } from "../ui/Section";
-import { cpData, testimonialsData } from "../../data/portfolioData";
+import { testimonialsData } from "../../data/portfolioData";
 
-export const Research: React.FC = () => {
+export const Reviews: React.FC = () => {
   return (
-    <Section id="research" title="Experience & Research">
+    <Section id="reviews" title="Beyond Development">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        {/* Left Column: Research & CP */}
+        {/* Left Column: Freelancing and Stuff */}
         <div className="space-y-12">
-          {/* Research */}
+          {/* Freelancing */}
           <motion.div
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 border-b border-gray-800 pb-2">
-              Academic Research
+              Video Editing and Graphics Designing
             </h3>
             <div className="bg-bgSecondary p-6 rounded-2xl border border-gray-800">
               <h4 className="text-xl font-semibold text-accent mb-2">
-                Thesis: Cotton Leaf Disease Detection and Classification Using
-                Fine-tuned ResNet50 Architecture
+                Davinci Resolve Studio and Adobe Tools Expert
               </h4>
               <p className="text-textSecondary mb-4 text-sm leading-relaxed">
-                Fine-tuned and evaluated deep learning models for cotton leaf
-                disease detection using Python, TensorFlow, and Scikit-learn
-                under varied augmentation, class balancing, dropout, and
-                learning rate settings, and deployed the best-performing model
-                on Hugging Face Spaces with a Gradio interface, integrating it
-                into a React-based web application hosted on Vercel to enable
-                image-based inference via APIs.
+                An experienced video editing specialist proficient in DaVinci
+                Resolve Studio and Adobe tools. Successfully completed multiple
+                projects including short promotional videos from stock footage,
+                video podcasts with minimal editing, and detailed sleep-related
+                documentaries requiring strict style adherence. Core skills
+                include video post-editing, audio mixing, and graphic design,
+                applied to create polished visuals and cohesive branding across
+                diverse content forms. Committed to high-quality results and
+                seamless project workflows.
               </p>
               <div className="flex gap-4">
                 <a
-                  href="https://drive.google.com/file/d/1GqX_BBJdZYkOvJ7ycFt11dqDwYU3xv4k/view?usp=sharing#"
+                  href="https://www.upwork.com/freelancers/~01770797642491d376"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-medium text-white hover:text-accent transition-colors underline underline-offset-4 decoration-gray-700 hover:decoration-accent"
                 >
-                  Read Manuscript
-                </a>
-                <a
-                  href="https://huggingface.co/spaces/shoaibramim/CLDD_ResNet50"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-white hover:text-accent transition-colors underline underline-offset-4 decoration-gray-700 hover:decoration-accent"
-                >
-                  View Deployment (Hugging Face)
+                  Find me on Upwork
                 </a>
               </div>
             </div>
           </motion.div>
 
-          {/* Competitive Programming */}
-          {/* <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
-            <h3 className="text-2xl font-bold text-white mb-6 border-b border-gray-800 pb-2">Competitive Programming</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {cpData.map((cp, idx) => (
-                <div key={idx} className="bg-bgPrimary p-4 rounded-xl border border-gray-800 text-center">
-                  <div className="text-lg font-bold text-white mb-1">{cp.platform}</div>
-                  <div className="text-accent font-semibold">{cp.rating}</div>
-                  <div className="text-xs text-gray-500 mt-2">{cp.solved}+ Solved</div>
-                </div>
-              ))}
+          {/* Stuff */}
+          <motion.div
+            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+          >
+            <h3 className="text-2xl font-bold text-white mb-6 border-b border-gray-800 pb-2">
+              Pastimes
+            </h3>
+            <div className="bg-bgSecondary p-6 rounded-2xl border border-gray-800">
+              <h4 className="text-xl font-semibold text-accent mb-2">
+                Watching Football, Movies, TV Shows, Anime and Playing Video
+                Games!
+              </h4>
+              <p className="text-textSecondary mb-4 text-sm leading-relaxed">
+                I am football geek and my favorite teams are FC Barcelona and
+                Argentina. I also love watching movies, TV shows and anime. My
+                favorite movie is Avengers: Endgame, favorite anime is Shingeki
+                no Kyojin (Attack on Titan), and my favorite TV show is Game of
+                Thrones. I also enjoy playing video games that have a strong
+                narrative or great combat mechanics, loved playing Ghost of
+                Tsushima.
+              </p>
             </div>
-          </motion.div> */}
+          </motion.div>
         </div>
 
         {/* Right Column: Client Testimonials */}

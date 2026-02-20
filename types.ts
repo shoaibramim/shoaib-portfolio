@@ -29,13 +29,6 @@ export interface Testimonial {
   rating: number;
 }
 
-export interface CPProfile {
-  platform: string;
-  rating: string | number;
-  solved: number;
-  url: string;
-}
-
 export interface ProfileData {
   name: string;
   role: string;
@@ -46,5 +39,6 @@ export interface ProfileData {
     linkedin: string;
     github: string;
     twitter?: string;
+    huggingface?: string;
   };
 }
