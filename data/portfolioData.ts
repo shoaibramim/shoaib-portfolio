@@ -2,7 +2,7 @@ import { ProfileData, Project, SkillCategory, Testimonial } from "../types";
 
 export const profileData: ProfileData = {
   name: "Shoaib Uddin",
-  role: "AI Engineer | Full Stack Developer",
+  role: "AI/ML Enthusiast | Full Stack Developer",
   email: "shoaibu.ramim@gmail.com",
   location: "Chattogram, Bangladesh",
   about:

@@ -1,43 +1,104 @@
-# Shoaib Uddin - Portfolio Monorepo
+# Shoaib Uddin — Portfolio
 
-This repository contains the personal portfolio website for myself (Shoaib Uddin), designed with a focus on high performance, clean architecture, and modern UI/UX principles.
+Personal portfolio website for myself (Shoaib Uddin), built with a focus on performance, clean architecture, and modern UI/UX.
 
-## Architecture
+## Tech Stack
 
-The project is structured as a Monorepo containing only Frontend components for now.
+| Layer        | Technology                                 |
+| ------------ | ------------------------------------------ |
+| Framework    | React 19, TypeScript ~5.8                  |
+| Build Tool   | Vite 6                                     |
+| Styling      | Tailwind CSS (CDN), Poppins (Google Fonts) |
+| Animation    | Framer Motion 12                           |
+| Icons        | React Icons 5                              |
+| Contact Form | FormSubmit.co (no backend required)        |
 
-*Note: This specific implementation has been adapted into a React Single-Page Application (SPA) structure at the root level to comply with the execution environment constraints, while retaining the modularity and component design of a Next.js App Router setup.*
+## Design System
 
-### Tech Stack
-- **Frontend**: React 18, TypeScript, Tailwind CSS, Framer Motion
-- **Backend**: None at this moment.
-- **Design System**: 60:20:10 rule (Dark Grey background, Lighter Grey surfaces, Purplish blue or green accent).
+Follows the **60:20:10 colour rule**:
+
+| Token           | Hex       | Role                            |
+| --------------- | --------- | ------------------------------- |
+| `bgPrimary`     | `#121212` | 60% — page background           |
+| `bgSecondary`   | `#1E1E1E` | 20% — card / surface background |
+| `accent`        | `#5C47FF` | 10% — purplish-blue highlight   |
+| `textPrimary`   | `#F5F5F5` | body text                       |
+| `textSecondary` | `#B3B3B3` | muted / secondary text          |
+
+Custom animations (`blob`, `gradient-x`) and scrollbar styles are defined inline in `index.html`.
 
 ## Folder Structure
 
 ```
 /
-├── index.html           # Main entry point & Tailwind Config
-├── index.tsx            # React root
-├── App.tsx              # Application layout
-├── data/                # JSON-like data stores (Projects, Skills)
-├── components/          
-│   ├── ui/              # Reusable generic components (Button, Section)
-│   ├── layout/          # Navbar, Footer
-│   └── sections/        # Page sections (Hero, About, Projects, etc.)
-└── README.md
+├── index.html              # HTML entry point, Tailwind CDN config & global CSS
+├── index.tsx               # React root
+├── App.tsx                 # Root layout (background blobs, noise texture, section order)
+├── types.ts                # Shared TypeScript interfaces (Project, Skill, Testimonial, ProfileData)
+├── vite.config.ts          # Vite config — dev port 3000, @ alias
+├── metadata.json           # Site metadata
+├── data/
+│   └── portfolioData.ts    # All content: profile info, skills, projects, testimonials
+└── components/
+    ├── ui/
+    │   ├── Button.tsx      # Reusable anchor/button component with icon support
+    │   ├── Section.tsx     # Section wrapper with title, subtitle, and scroll reveal
+    │   └── ProjectModal.tsx# Animated project detail modal (Escape-to-close)
+    ├── layout/
+    │   ├── Navbar.tsx      # Sticky, scroll-aware navbar with smooth-scroll + URL pushState
+    │   └── Footer.tsx      # Site footer
+    └── sections/
+        ├── Hero.tsx        # Full-screen intro with CV download, GitHub & HuggingFace links
+        ├── About.tsx       # Bio and personal background
+        ├── Skills.tsx      # Skill categories rendered from data
+        ├── Projects.tsx    # Project grid with category filter and modal detail view
+        ├── Reviews.tsx     # Client testimonials / star ratings
+        └── Contact.tsx     # Contact form (FormSubmit.co)
 ```
+
+## Sections
+
+| Section      | Description                                                                          |
+| ------------ | ------------------------------------------------------------------------------------ |
+| **Hero**     | Full-screen intro — name, role, tagline, links to GitHub / HuggingFace, CV download  |
+| **About**    | Bio highlighting AI/ML research background                                           |
+| **Skills**   | 5 categories — ML & AI, Frontend, Backend & Database, DevOps & Tools, Design & Media |
+| **Projects** | Grid of several projects; each card opens an animated modal with full details        |
+| **Reviews**  | Client testimonials from Upwork and Fiverr                                           |
+| **Contact**  | Name / email / message form submitted via FormSubmit.co                              |
 
 ## Setup & Running Locally
 
-### Frontend (React SPA)
-The frontend is designed to run in standard Vite or Create React App environments.
-1. Install dependencies: `npm install` (requires `react`, `react-dom`, `framer-motion`)
-2. Start development server: `npm start` or `npm run dev`
+### Prerequisites
 
+- Node.js ≥ 18
 
-## Features Implemented
-- **Data-Driven UI**: All projects and skills are rendered dynamically from `data/portfolioData.ts`.
-- **Framer Motion Animations**: Scroll reveals, staggered children, and hover states.
-- **Theme Configuration**: CSS variables managed via Tailwind config in `index.html`.
-- **Responsive Design**: Mobile-first implementation ensuring perfect rendering on all devices.
+### Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+VITE_CONTACT_EMAIL=your-email@example.com
+```
+
+This is used by the Contact form to route submissions via FormSubmit.co.
+
+### Install & Run
+
+```bash
+npm install
+npm run dev        # development server on http://localhost:3000
+npm run build      # production build → dist/
+npm run preview    # preview the production build locally
+```
+
+## Features
+
+- **Data-Driven UI** — all content (profile, skills, projects, testimonials) sourced from `data/portfolioData.ts`; add or edit content without touching component code.
+- **Animated Background** — three animating blobs and a subtle noise texture overlay applied globally via `App.tsx`.
+- **Smooth Navigation** — Navbar uses `scrollIntoView` + `history.pushState` so direct URLs (e.g. `/projects`) deep-link to the correct section.
+- **Project Modal** — click any project card to open an animated overlay with full description, tech tags, and links (GitHub, Live, Figma, Manuscript). Closes on Escape or backdrop click.
+- **Contact Form** — zero-backend form handler via FormSubmit.co; submission state (`idle → submitting → success/error`) managed locally.
+- **Framer Motion** — entrance animations, staggered children, and hover states throughout.
+- **Responsive Design** — mobile-first; hamburger menu on small screens, multi-column grid on larger ones.
+- **Custom Scrollbar** — styled via Tailwind `@layer base` to match the dark theme.
