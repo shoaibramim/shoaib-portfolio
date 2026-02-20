@@ -7,6 +7,7 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   figmaUrl?: string;
+  manuscriptUrl?: string;
   category: 'AI/ML' | 'Full-Stack' | 'Frontend' | 'UI/UX' | 'Mobile App' | 'Video Editing' | 'Graphic Design' | 'Other';
 }
 

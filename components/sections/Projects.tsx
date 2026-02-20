@@ -105,6 +105,17 @@ export const Projects: React.FC = () => {
                       Figma Prototype
                     </a>
                   )}
+                  {project.manuscriptUrl && (
+                    <a
+                      href={project.manuscriptUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-textSecondary hover:text-accent transition-colors flex items-center gap-2 text-sm font-medium"
+                    >
+                      <MdOpenInNew size={16} />
+                      Manuscript
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

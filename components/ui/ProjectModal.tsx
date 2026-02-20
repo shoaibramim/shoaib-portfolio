@@ -113,13 +113,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                 </div>
 
                 {/* Links */}
-                {(project.githubUrl || project.liveUrl || project.figmaUrl) && (
+                {(project.githubUrl ||
+                  project.liveUrl ||
+                  project.figmaUrl ||
+                  project.manuscriptUrl) && (
                   <div className="pt-5 border-t border-bgPrimary">
                     <h3 className="text-xs font-semibold text-textSecondary uppercase tracking-wider mb-4">
                       Links
                     </h3>
                     <div className="flex flex-wrap gap-3">
-                      {project.githubUrl && project.githubUrl !== "#" && (
+                      {project.githubUrl && (
                         <a
                           href={project.githubUrl}
                           target="_blank"
@@ -135,10 +138,21 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-bgPrimary hover:bg-accent/80 transition-all duration-200 text-sm font-medium"
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-bgPrimary border border-bgPrimary hover:border-accent text-textSecondary hover:text-accent transition-all duration-200 text-sm font-medium"
                         >
                           <MdOpenInNew size={16} />
                           Live Demo
+                        </a>
+                      )}
+                      {project.manuscriptUrl && (
+                        <a
+                          href={project.manuscriptUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-bgPrimary border border-bgPrimary hover:border-accent text-textSecondary hover:text-accent transition-all duration-200 text-sm font-medium"
+                        >
+                          <MdOpenInNew size={16} />
+                          Manuscript
                         </a>
                       )}
                       {project.figmaUrl && (

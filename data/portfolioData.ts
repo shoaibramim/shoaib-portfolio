@@ -70,6 +70,28 @@ export const skillsData: SkillCategory[] = [
 
 export const projectsData: Project[] = [
   {
+    id: "cotton-disease",
+    title: "Cotton Leaf Disease Detection",
+    description:
+      "Fine-tuned and evaluated deep learning models for cotton leaf disease detection using Python, TensorFlow, and Scikit-learn across varied augmentation, class balancing, dropout, and learning rate settings. Deployed the best-performing model on Hugging Face Spaces with a Gradio interface and integrated it into a React-based web application hosted on Vercel, enabling image-based inference via API communication.",
+    image: "/CLDD.png",
+    tags: [
+      "Deep Learning",
+      "Computer Vision",
+      "Python",
+      "TensorFlow",
+      "Scikit-learn",
+      "React",
+      "HuggingFace",
+      "Vercel",
+    ],
+    githubUrl: "https://github.com/shoaibramim/CLDD",
+    liveUrl: "https://cottonguard.vercel.app/",
+    manuscriptUrl:
+      "https://drive.google.com/file/d/1GqX_BBJdZYkOvJ7ycFt11dqDwYU3xv4k/view?usp=sharing",
+    category: "AI/ML",
+  },
+  {
     id: "voter-slip",
     title: "Voter Slip Generator",
     description:
@@ -90,30 +112,10 @@ export const projectsData: Project[] = [
     category: "Full-Stack",
   },
   {
-    id: "cotton-disease",
-    title: "Cotton Leaf Disease Detection",
-    description:
-      "Fine-tuned and evaluated deep learning models for cotton leaf disease detection using Python, TensorFlow, and Scikit-learn across varied augmentation, class balancing, dropout, and learning rate settings.",
-    image: "/CLDD.png",
-    tags: [
-      "Deep Learning",
-      "Computer Vision",
-      "Python",
-      "TensorFlow",
-      "Scikit-learn",
-      "React",
-      "HuggingFace",
-      "Vercel",
-    ],
-    githubUrl: "https://github.com/shoaibramim/CLDD",
-    liveUrl: "https://cottonguard.vercel.app/",
-    category: "AI/ML",
-  },
-  {
     id: "krishibid",
     title: "Krishibid",
     description:
-      "Designed the UI in Figma and implemented the app using React Native and Firebase, and added interactive features: real-time comments, reactions, rating, Google Maps, pagination, and animations using Reanimated and GSAP.",
+      "Developed a mobile application integrating a TensorFlow Lite model for real-time crop disease prediction. Designed the UI in Figma and implemented the app using React Native and Firebase, and added interactive features: real-time comments, reactions, rating, Google Maps, pagination, and animations using Reanimated and GSAP.",
     image: "/Krishibid_UI_Promo.jpg",
     tags: [
       "React Native",
@@ -145,7 +147,9 @@ export const projectsData: Project[] = [
       "Designed UI wireframes in Figma and built user-focused result dashboards using React, TypeScript, Tailwind CSS, and Shadcn UI, coordinating closely with backend and database teams in an Agile environment.",
     image: "/Teacher_View.jpg",
     tags: ["React", "Figma", "Shadcn UI", "Tailwind CSS", "TypeScript"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/ZahidHasan321/RPS_V2",
+    figmaUrl:
+      "https://www.figma.com/design/srv5efCd47DGTslEQpASno/Result-Processing-System-UI-Draft?node-id=0-1&t=hCgpyZJwRKfgPhcH-1",
     category: "Frontend",
   },
 ];
