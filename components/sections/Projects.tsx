@@ -10,7 +10,7 @@ export const Projects: React.FC = () => {
       title="Selected Works"
       subtitle="A collection of recent projects spanning AI, web dev, and systems."
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
         {projectsData.map((project, idx) => (
           <motion.div
             key={project.id}

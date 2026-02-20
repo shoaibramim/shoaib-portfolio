@@ -4,7 +4,7 @@ import { profileData } from "../../data/portfolioData";
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-bgPrimary border-t border-gray-800 py-8 mt-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-textSecondary text-sm text-center md:text-left">
           &copy; {new Date().getFullYear()} {profileData.name}. All rights
           reserved.

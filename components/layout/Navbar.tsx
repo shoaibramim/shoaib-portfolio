@@ -66,7 +66,7 @@ export const Navbar: React.FC = () => {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 flex justify-between items-center">
         <a
           href="/"
           onClick={scrollToTop}

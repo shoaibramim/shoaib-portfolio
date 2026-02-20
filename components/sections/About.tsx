@@ -66,7 +66,7 @@ export const About: React.FC = () => {
 
   return (
     <Section id="about" title="About Me">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:gap-24 gap-12 items-center">
         <motion.div
           variants={{
             hidden: { opacity: 0, x: -20 },

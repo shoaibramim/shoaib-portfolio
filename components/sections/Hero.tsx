@@ -6,7 +6,7 @@ import { Button } from "../ui/Button";
 export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 relative z-10 w-full">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

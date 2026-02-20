@@ -66,7 +66,7 @@ export const Contact: React.FC = () => {
       title="Get In Touch"
       subtitle="Have a project in mind or want to collaborate? Let's talk."
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:gap-24 gap-12">
         <motion.div
           variants={{
             hidden: { opacity: 0, x: -20 },

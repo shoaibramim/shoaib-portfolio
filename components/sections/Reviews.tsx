@@ -6,7 +6,7 @@ import { testimonialsData } from "../../data/portfolioData";
 export const Reviews: React.FC = () => {
   return (
     <Section id="reviews" title="Beyond Development">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:gap-24 gap-16">
         {/* Left Column: Freelancing and Stuff */}
         <div className="space-y-12">
           {/* Freelancing */}
