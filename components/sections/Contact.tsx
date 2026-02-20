@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "../ui/Section";
 import { Button } from "../ui/Button";
 import { profileData } from "../../data/portfolioData";
+import { MdEmail, MdLocationOn, MdCheckCircle } from "react-icons/md";
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -85,19 +86,7 @@ export const Contact: React.FC = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-4 text-textSecondary hover:text-white transition-colors">
               <div className="w-12 h-12 bg-bgSecondary rounded-full flex items-center justify-center text-accent">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+                <MdEmail size={20} />
               </div>
               <div>
                 <div className="text-sm text-gray-500">Email</div>
@@ -114,25 +103,7 @@ export const Contact: React.FC = () => {
 
             <div className="flex items-center gap-4 text-textSecondary hover:text-white transition-colors">
               <div className="w-12 h-12 bg-bgSecondary rounded-full flex items-center justify-center text-accent">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
+                <MdLocationOn size={20} />
               </div>
               <div>
                 <div className="text-sm text-gray-500">Location</div>
@@ -162,19 +133,7 @@ export const Contact: React.FC = () => {
                   className="absolute inset-0 bg-bgSecondary/95 backdrop-blur-sm z-10 flex flex-col items-center justify-center text-center p-6"
                 >
                   <div className="w-16 h-16 bg-green-900/30 text-green-500 rounded-full flex items-center justify-center mb-4">
-                    <svg
-                      className="w-8 h-8"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
+                    <MdCheckCircle size={32} />
                   </div>
                   <h4 className="text-xl font-bold text-white mb-2">
                     Message Sent!
