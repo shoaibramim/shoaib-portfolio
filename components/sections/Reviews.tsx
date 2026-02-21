@@ -92,7 +92,7 @@ export const Reviews: React.FC = () => {
                 className="relative bg-bgSecondary p-6 rounded-2xl border border-gray-800 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300"
               >
                 <span className="absolute top-4 right-4 text-gray-800">
-                  <MdFormatQuote size={32} />
+                  <MdFormatQuote size={40} />
                 </span>
                 <div className="flex items-center mb-4">
                   <div className="flex text-accent">
