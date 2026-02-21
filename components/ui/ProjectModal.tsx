@@ -50,7 +50,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="fixed top-20 left-0 right-0 bottom-0 z-[51] flex items-center justify-center p-4 lg:p-6 pointer-events-none"
+            className="fixed top-20 left-0 right-0 bottom-0 z-[51] flex items-start justify-center p-4 lg:p-6 pointer-events-none"
           >
             {/* Modal Panel */}
             <motion.div
@@ -59,7 +59,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-3xl h-full flex flex-col bg-bgSecondary rounded-2xl border border-bgPrimary shadow-2xl shadow-bgPrimary/60 pointer-events-auto"
+              className="relative w-full max-w-3xl max-h-full flex flex-col bg-bgSecondary rounded-2xl border border-bgPrimary shadow-2xl shadow-bgPrimary/60 pointer-events-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
