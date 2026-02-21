@@ -74,7 +74,7 @@ export const Navbar: React.FC = () => {
           className="text-2xl font-bold tracking-tighter text-textPrimary flex items-center gap-2"
         >
           <img
-            src="/Portfolio_Icon_White.png"
+            src="/Portfolio_Icon_W.svg"
             alt="Shoaib Uddin logo"
             className="w-8 h-8"
           />
