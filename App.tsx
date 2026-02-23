@@ -7,6 +7,7 @@ import { Projects } from "./components/sections/Projects";
 import { Reviews } from "./components/sections/Reviews";
 import { Contact } from "./components/sections/Contact";
 import { Footer } from "./components/layout/Footer";
+import { SocialSidebar } from "./components/ui/SocialSidebar";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       ></div>
 
       <Navbar />
+      <SocialSidebar />
 
       <main className="flex-grow z-10">
         <Hero />
