@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { profileData } from "../../data/portfolioData";
 import { Button } from "../ui/Button";
+import { CVModal } from "../ui/CVModal";
 import { FaGithub } from "react-icons/fa";
-import { MdOpenInNew, MdFileDownload } from "react-icons/md";
+import { MdOpenInNew } from "react-icons/md";
+import { FaFilePdf } from "react-icons/fa6";
 
 export const Hero: React.FC = () => {
+  const [cvOpen, setCvOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 relative z-10 w-full">
@@ -63,16 +67,22 @@ export const Hero: React.FC = () => {
               HuggingFace
             </Button>
             <Button
-              href="/Shoaib_Uddin_CV.pdf"
               variant="secondary"
-              download="Shoaib_Uddin_CV.pdf"
-              icon={<MdFileDownload size={20} />}
+              onClick={() => setCvOpen(true)}
+              icon={<FaFilePdf size={18} />}
             >
-              Download CV
+              View CV
             </Button>
           </motion.div>
         </div>
       </div>
+
+      <CVModal
+        isOpen={cvOpen}
+        onClose={() => setCvOpen(false)}
+        cvPath="/Shoaib_Uddin_CV.pdf"
+        fileName="Shoaib_Uddin_CV.pdf"
+      />
 
       {/* Scroll indicator */}
       <motion.div
