@@ -1,4 +1,10 @@
-import { ProfileData, Project, SkillCategory, Testimonial } from "../types";
+import {
+  ProfileData,
+  Project,
+  SkillCategory,
+  Testimonial,
+  EducationData,
+} from "../types";
 
 export const profileData: ProfileData = {
   name: "Shoaib Uddin",
@@ -180,3 +186,57 @@ export const testimonialsData: Testimonial[] = [
     rating: 5,
   },
 ];
+
+export const educationData: EducationData = {
+  education: [
+    {
+      degree: "M.S. in Engineering",
+      institution: "University of Chittagong",
+      field: "Computer Science & Engineering",
+      year: "Expected: Dec, 2026",
+      status: "Currently Enrolled",
+    },
+    {
+      degree: "B.Sc. in Engineering",
+      institution: "University of Chittagong",
+      field: "Computer Science & Engineering",
+      year: "2025",
+      gpa: "3.43",
+      scale: "4.00",
+      status: "Graduated",
+      courses: [
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Digital Image Processing",
+        "Software Engineering and Design Patterns",
+        "Computer Networks",
+        "Design and Analysis of Algorithms",
+        "Database Systems",
+        "Data Structures",
+        "Discrete Mathematics",
+      ],
+    },
+    {
+      degree: "HSC",
+      institution: "Cox's Bazar Govt. College",
+      field: "Science",
+      year: "2018",
+      gpa: "4.67",
+      scale: "5.00",
+      status: "Completed",
+    },
+  ],
+  certifications: [
+    {
+      title: "Fundamentals of AI Agents Using RAG and LangChain",
+      issuer: "IBM",
+      url: "https://www.coursera.org/account/accomplishments/certificate/Z97OA7FRND9D",
+      pdfPath: "/Coursera_Certifcate_On_Fundamentals_of_AI_Agents.pdf",
+    },
+  ],
+  activities: [
+    "Participant and National Round Qualifier – 8th Dutch-Bangla Bank–Prothom Alo Bangladesh Physics Olympiad, 2018.",
+    "Team Lead – Design and Marketing Team, CSEPL 2022 & 2023, organized by the CSE Department, University of Chittagong.",
+    "Volunteer – 5th Convocation of the University of Chittagong (Departmental), 2025 and CSE Fest 2020. Created an official video presentation showcased at the CSE Department during Convocation.",
+  ],
+};

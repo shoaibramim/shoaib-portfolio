@@ -17,7 +17,10 @@ export const Reviews: React.FC = () => {
         <div className="space-y-12">
           {/* Freelancing */}
           <motion.div
-            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+            variants={{
+              hidden: { opacity: 0, scale: 0.95 },
+              visible: { opacity: 1, scale: 1 },
+            }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 border-b border-gray-800 pb-2">
               Video Editing and Graphics Designing
@@ -55,7 +58,10 @@ export const Reviews: React.FC = () => {
 
           {/* Stuff */}
           <motion.div
-            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+            variants={{
+              hidden: { opacity: 0, scale: 0.95 },
+              visible: { opacity: 1, scale: 1 },
+            }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 border-b border-gray-800 pb-2">
               Pastimes
@@ -80,7 +86,10 @@ export const Reviews: React.FC = () => {
 
         {/* Right Column: Client Testimonials */}
         <motion.div
-          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+          variants={{
+            hidden: { opacity: 0, scale: 0.95 },
+            visible: { opacity: 1, scale: 1 },
+          }}
         >
           <h3 className="text-2xl font-bold text-white mb-6 border-b border-gray-800 pb-2">
             Client Work & Reviews

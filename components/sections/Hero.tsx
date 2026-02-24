@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { profileData } from "../../data/portfolioData";
 import { Button } from "../ui/Button";
-import { CVModal } from "../ui/CVModal";
+import { PDFViewerModal } from "../ui/PDFViewerModal";
 import { FaGithub } from "react-icons/fa";
 import { MdOpenInNew } from "react-icons/md";
 import { FaFilePdf } from "react-icons/fa6";
@@ -77,11 +77,12 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      <CVModal
+      <PDFViewerModal
         isOpen={cvOpen}
         onClose={() => setCvOpen(false)}
-        cvPath="/Shoaib_Uddin_CV.pdf"
+        pdfPath="/Shoaib_Uddin_CV.pdf"
         fileName="Shoaib_Uddin_CV.pdf"
+        title="Curriculum Vitae"
       />
 
       {/* Scroll indicator */}

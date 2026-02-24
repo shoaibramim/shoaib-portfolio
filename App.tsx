@@ -5,6 +5,7 @@ import { About } from "./components/sections/About";
 import { Skills } from "./components/sections/Skills";
 import { Projects } from "./components/sections/Projects";
 import { Reviews } from "./components/sections/Reviews";
+import { Education } from "./components/sections/Education";
 import { Contact } from "./components/sections/Contact";
 import { Footer } from "./components/layout/Footer";
 import { SocialSidebar } from "./components/ui/SocialSidebar";
@@ -19,7 +20,7 @@ function App() {
         <div className="absolute bottom-1/4 left-1/2 w-[350px] h-[350px] bg-gray-700/30 rounded-full filter blur-[100px] animate-blob animation-delay-4000"></div>
       </div>
 
-      {/* Global Background Noise Texture (Subtle) */}
+      {/* Global Background Noise Texture */}
       <div
         className="fixed inset-0 opacity-[0.015] z-0 pointer-events-none"
         style={{
@@ -35,6 +36,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <Education />
         <Reviews />
         <Contact />
       </main>

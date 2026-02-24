@@ -8,7 +8,15 @@ export interface Project {
   liveUrl?: string;
   figmaUrl?: string;
   manuscriptUrl?: string;
-  category: 'AI/ML' | 'Full-Stack' | 'Frontend' | 'UI/UX' | 'Mobile App' | 'Video Editing' | 'Graphic Design' | 'Other';
+  category:
+    | "AI/ML"
+    | "Full-Stack"
+    | "Frontend"
+    | "UI/UX"
+    | "Mobile App"
+    | "Video Editing"
+    | "Graphic Design"
+    | "Other";
 }
 
 export interface Skill {
@@ -43,4 +51,28 @@ export interface ProfileData {
     huggingface?: string;
     behance?: string;
   };
+}
+
+export interface EducationEntry {
+  degree: string;
+  institution: string;
+  field: string;
+  year: string;
+  status?: string;
+  gpa?: string;
+  scale?: string;
+  courses?: string[];
+}
+
+export interface Certification {
+  title: string;
+  issuer: string;
+  url: string;
+  pdfPath?: string;
+}
+
+export interface EducationData {
+  education: EducationEntry[];
+  certifications: Certification[];
+  activities: string[];
 }

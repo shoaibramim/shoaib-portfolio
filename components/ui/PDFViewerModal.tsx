@@ -3,18 +3,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 import { MdFileDownload } from "react-icons/md";
 
-interface CVModalProps {
+interface PDFViewerModalProps {
   isOpen: boolean;
   onClose: () => void;
-  cvPath: string;
+  /** Path or URL to the PDF file */
+  pdfPath: string;
+  /** Suggested filename when downloading */
   fileName?: string;
+  /** Label shown in the modal header */
+  title?: string;
 }
 
-export const CVModal: React.FC<CVModalProps> = ({
+export const PDFViewerModal: React.FC<PDFViewerModalProps> = ({
   isOpen,
   onClose,
-  cvPath,
-  fileName = "CV.pdf",
+  pdfPath,
+  fileName = "document.pdf",
+  title = "PDF Viewer",
 }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -36,7 +41,7 @@ export const CVModal: React.FC<CVModalProps> = ({
         <>
           {/* Backdrop */}
           <motion.div
-            key="cv-modal-backdrop"
+            key="pdf-modal-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -47,7 +52,7 @@ export const CVModal: React.FC<CVModalProps> = ({
 
           {/* Modal container */}
           <motion.div
-            key="cv-modal-container"
+            key="pdf-modal-container"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -56,7 +61,7 @@ export const CVModal: React.FC<CVModalProps> = ({
           >
             {/* Modal Panel */}
             <motion.div
-              key="cv-modal-panel"
+              key="pdf-modal-panel"
               initial={{ opacity: 0, scale: 0.93, y: 32 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -67,12 +72,12 @@ export const CVModal: React.FC<CVModalProps> = ({
               {/* Header bar */}
               <div className="flex items-center justify-between px-5 py-3 border-b border-bgPrimary flex-shrink-0">
                 <span className="text-textPrimary font-semibold text-sm tracking-wide">
-                  Curriculum Vitae
+                  {title}
                 </span>
                 <div className="flex items-center gap-2">
                   {/* Download button */}
                   <a
-                    href={cvPath}
+                    href={pdfPath}
                     download={fileName}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-accent text-white hover:bg-accent/80 transition-colors shadow-[0_0_10px_rgba(128,0,0,0.25)]"
                   >
@@ -83,7 +88,7 @@ export const CVModal: React.FC<CVModalProps> = ({
                   <button
                     onClick={onClose}
                     className="p-2 rounded-full bg-bgPrimary/80 hover:bg-accent/20 text-textSecondary hover:text-accent transition-all duration-200 border border-bgPrimary hover:border-accent"
-                    aria-label="Close CV viewer"
+                    aria-label="Close PDF viewer"
                   >
                     <FaTimes size={14} />
                   </button>
@@ -93,8 +98,8 @@ export const CVModal: React.FC<CVModalProps> = ({
               {/* PDF iframe — uses the browser's native PDF viewer */}
               <div className="flex-1 min-h-0">
                 <iframe
-                  src={`${cvPath}#toolbar=1&navpanes=0&scrollbar=1`}
-                  title="Curriculum Vitae"
+                  src={`${pdfPath}#toolbar=1&navpanes=0&scrollbar=1`}
+                  title={title}
                   className="w-full h-full border-0"
                   loading="lazy"
                 />
