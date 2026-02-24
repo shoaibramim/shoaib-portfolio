@@ -1,6 +1,6 @@
-# Shoaib Uddin — Portfolio
+# Shoaib Uddin - Portfolio
 
-Personal portfolio website for myself (Shoaib Uddin), built with a focus on performance, clean architecture, and modern UI/UX.
+Personal portfolio website for Shoaib Uddin, built with a focus on performance, clean architecture, and modern UI/UX.
 
 ## Tech Stack
 
@@ -21,7 +21,7 @@ Follows the **60:20:10 colour rule**:
 | --------------- | --------- | ------------------------------- |
 | `bgPrimary`     | `#121212` | 60% — page background           |
 | `bgSecondary`   | `#1E1E1E` | 20% — card / surface background |
-| `accent`        | `#5C47FF` | 10% — purplish-blue highlight   |
+| `accent`        | `#0771e1` | 10% — sky blue highlight        |
 | `textPrimary`   | `#F5F5F5` | body text                       |
 | `textSecondary` | `#B3B3B3` | muted / secondary text          |
 
@@ -34,16 +34,18 @@ Custom animations (`blob`, `gradient-x`) and scrollbar styles are defined inline
 ├── index.html              # HTML entry point, Tailwind CDN config & global CSS
 ├── index.tsx               # React root
 ├── App.tsx                 # Root layout (background blobs, noise texture, section order)
-├── types.ts                # Shared TypeScript interfaces (Project, Skill, Testimonial, ProfileData)
+├── types.ts                # Shared TypeScript interfaces (Project, Skill, Testimonial, ProfileData, EducationData)
 ├── vite.config.ts          # Vite config — dev port 3000, @ alias
 ├── metadata.json           # Site metadata
 ├── data/
-│   └── portfolioData.ts    # All content: profile info, skills, projects, testimonials
+│   └── portfolioData.ts    # All content: profile info, skills, projects, education, testimonials
 └── components/
     ├── ui/
-    │   ├── Button.tsx      # Reusable anchor/button component with icon support
-    │   ├── Section.tsx     # Section wrapper with title, subtitle, and scroll reveal
-    │   └── ProjectModal.tsx# Animated project detail modal (Escape-to-close)
+    │   ├── Button.tsx          # Reusable anchor/button component with icon support
+    │   ├── Section.tsx         # Section wrapper with title, subtitle, and scroll reveal
+    │   ├── ProjectModal.tsx    # Animated project detail modal (Escape-to-close)
+    │   ├── PDFViewerModal.tsx  # Animated in-browser PDF viewer modal with download option
+    │   └── SocialSidebar.tsx   # Fixed left sidebar with social links; scroll-aware positioning
     ├── layout/
     │   ├── Navbar.tsx      # Sticky, scroll-aware navbar with smooth-scroll + URL pushState
     │   └── Footer.tsx      # Site footer
@@ -52,20 +54,22 @@ Custom animations (`blob`, `gradient-x`) and scrollbar styles are defined inline
         ├── About.tsx       # Bio and personal background
         ├── Skills.tsx      # Skill categories rendered from data
         ├── Projects.tsx    # Project grid with category filter and modal detail view
+        ├── Education.tsx   # Education timeline, certifications, and extracurricular activities
         ├── Reviews.tsx     # Client testimonials / star ratings
         └── Contact.tsx     # Contact form (FormSubmit.co)
 ```
 
 ## Sections
 
-| Section      | Description                                                                          |
-| ------------ | ------------------------------------------------------------------------------------ |
-| **Hero**     | Full-screen intro — name, role, tagline, links to GitHub / HuggingFace, CV download  |
-| **About**    | Bio highlighting AI/ML research background                                           |
-| **Skills**   | 5 categories — ML & AI, Frontend, Backend & Database, DevOps & Tools, Design & Media |
-| **Projects** | Grid of several projects; each card opens an animated modal with full details        |
-| **Reviews**  | Client testimonials from Upwork and Fiverr                                           |
-| **Contact**  | Name / email / message form submitted via FormSubmit.co                              |
+| Section       | Description                                                                          |
+| ------------- | ------------------------------------------------------------------------------------ |
+| **Hero**      | Full-screen intro — name, role, tagline, links to GitHub / HuggingFace, CV download  |
+| **About**     | Bio highlighting AI/ML research background                                           |
+| **Skills**    | 5 categories — ML & AI, Frontend, Backend & Database, DevOps & Tools, Design & Media |
+| **Projects**  | Grid of projects; each card opens an animated modal with full details                |
+| **Education** | Degree timeline, IBM certification with in-browser PDF viewer, and activities        |
+| **Reviews**   | Client testimonials from Upwork and Fiverr                                           |
+| **Contact**   | Name / email / message form submitted via FormSubmit.co                              |
 
 ## Setup & Running Locally
 
@@ -94,10 +98,12 @@ npm run preview    # preview the production build locally
 
 ## Features
 
-- **Data-Driven UI** — all content (profile, skills, projects, testimonials) sourced from `data/portfolioData.ts`; add or edit content without touching component code.
+- **Data-Driven UI** — all content (profile, skills, projects, education, testimonials) sourced from `data/portfolioData.ts`; add or edit content without touching component code.
 - **Animated Background** — three animating blobs and a subtle noise texture overlay applied globally via `App.tsx`.
 - **Smooth Navigation** — Navbar uses `scrollIntoView` + `history.pushState` so direct URLs (e.g. `/projects`) deep-link to the correct section.
 - **Project Modal** — click any project card to open an animated overlay with full description, tech tags, and links (GitHub, Live, Figma, Manuscript). Closes on Escape or backdrop click.
+- **PDF Viewer Modal** — certifications open in an in-browser PDF viewer with a download option. Closes on Escape or backdrop click.
+- **Social Sidebar** — fixed left sidebar showing GitHub, LinkedIn, and Behance links; travels upward as the user scrolls and hides when the footer is in view.
 - **Contact Form** — zero-backend form handler via FormSubmit.co; submission state (`idle → submitting → success/error`) managed locally.
 - **Framer Motion** — entrance animations, staggered children, and hover states throughout.
 - **Responsive Design** — mobile-first; hamburger menu on small screens, multi-column grid on larger ones.
