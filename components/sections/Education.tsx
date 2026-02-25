@@ -103,7 +103,7 @@ export const Education: React.FC = () => {
                         {entry.courses.map((course, ci) => (
                           <span
                             key={ci}
-                            className="text-xs bg-bgPrimary text-textSecondary px-2 py-0.5 rounded-md border border-gray-800"
+                            className="text-xs bg-bgPrimary text-textSecondary px-2 py-0.5 rounded-md border border-gray-800 hover:border-accent/75 transition-colors"
                           >
                             {course}
                           </span>
@@ -114,9 +114,11 @@ export const Education: React.FC = () => {
 
                   {/* Status tag */}
                   {entry.status && (
-                    <span className="inline-block text-xs italic text-accent/80 bg-accent/5 border border-accent/20 px-2 py-0.5 mt-2 rounded-md">
-                      {entry.status}
-                    </span>
+                    <div className="mt-3 border-t border-gray-800">
+                      <span className="inline-block text-xs italic text-accent/80 bg-accent/5 border border-accent/20 px-2 py-0.5 mt-2 rounded-md">
+                        {entry.status}
+                      </span>
+                    </div>
                   )}
                 </div>
               </motion.div>
