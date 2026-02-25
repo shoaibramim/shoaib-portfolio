@@ -4,14 +4,14 @@ Personal portfolio website for Shoaib Uddin, built with a focus on performance, 
 
 ## Tech Stack
 
-| Layer        | Technology                                 |
-| ------------ | ------------------------------------------ |
-| Framework    | React 19, TypeScript ~5.8                  |
-| Build Tool   | Vite 6                                     |
-| Styling      | Tailwind CSS (CDN), Poppins (Google Fonts) |
-| Animation    | Framer Motion 12                           |
-| Icons        | React Icons 5                              |
-| Contact Form | FormSubmit.co (no backend required)        |
+| Layer        | Technology                                                    |
+| ------------ | ------------------------------------------------------------- |
+| Framework    | React 19, TypeScript ~5.8                                     |
+| Build Tool   | Vite 6                                                        |
+| Styling      | Tailwind CSS v3 (PostCSS, build-time), Poppins (Google Fonts) |
+| Animation    | Framer Motion 12                                              |
+| Icons        | React Icons 5                                                 |
+| Contact Form | FormSubmit.co (no backend required)                           |
 
 ## Design System
 
@@ -25,17 +25,23 @@ Follows the **60:20:10 colour rule**:
 | `textPrimary`   | `#F5F5F5` | body text                       |
 | `textSecondary` | `#B3B3B3` | muted / secondary text          |
 
-Custom animations (`blob`, `gradient-x`) and scrollbar styles are defined inline in `index.html`.
+Custom animations (`blob`, `gradient-x`) are defined in `tailwind.config.js`. Base styles and scrollbar rules live in `index.css`.
 
 ## Folder Structure
 
 ```
 /
-├── index.html              # HTML entry point, Tailwind CDN config & global CSS
-├── index.tsx               # React root
+├── index.html              # HTML entry point; SSG placeholder (<!--app-html-->), meta tags
+├── index.css               # Tailwind directives (@tailwind base/components/utilities) + base styles
+├── index.tsx               # React client entry — hydrateRoot (SSG) / createRoot (dev) fallback
+├── entry-server.tsx        # SSR render function used by the prerender script
+├── prerender.mjs           # Post-build: injects renderToString output into dist/index.html, then deletes dist/server/
+├── tailwind.config.js      # Tailwind v3 config — theme colors, fonts, custom animations
+├── postcss.config.js       # PostCSS config — tailwindcss + autoprefixer
+├── vercel.json             # Vercel rewrite rule — serves index.html for all routes (SPA routing)
 ├── App.tsx                 # Root layout (background blobs, noise texture, section order)
 ├── types.ts                # Shared TypeScript interfaces (Project, Skill, Testimonial, ProfileData, EducationData)
-├── vite.config.ts          # Vite config — dev port 3000, @ alias
+├── vite.config.ts          # Vite config — dev port 3000, SSR outDir switch, @ alias
 ├── metadata.json           # Site metadata
 ├── data/
 │   └── portfolioData.ts    # All content: profile info, skills, projects, education, testimonials
@@ -71,6 +77,32 @@ Custom animations (`blob`, `gradient-x`) and scrollbar styles are defined inline
 | **Reviews**   | Client testimonials from Upwork and Fiverr                                           |
 | **Contact**   | Name / email / message form submitted via FormSubmit.co                              |
 
+## Rendering Architecture
+
+The app uses **Static Site Generation (SSG)** via a custom Vite SSR prerender pipeline:
+
+| Step            | Command                             | Output                                                               |
+| --------------- | ----------------------------------- | -------------------------------------------------------------------- |
+| 1. Client build | `vite build`                        | `dist/` — hashed CSS/JS assets                                       |
+| 2. SSR build    | `vite build --ssr entry-server.tsx` | `dist/server/entry-server.js` (temporary)                            |
+| 3. Prerender    | `node prerender.mjs`                | Injects rendered HTML into `dist/index.html`, deletes `dist/server/` |
+
+`index.tsx` uses `ReactDOM.hydrateRoot` when `#root` already has children (production), falling back to `ReactDOM.createRoot` in development where no prerendering occurs.
+
+Googlebot and other crawlers receive **fully rendered HTML** without executing any JavaScript.
+
+`vercel.json` contains a catch-all rewrite rule so direct visits to pushState URLs (e.g. `https://shoaibramim.me/projects`) are served `index.html` instead of returning a 404.
+
+## Deployment (Vercel)
+
+Before the first deploy, add the environment variable in the Vercel dashboard:
+
+| Variable             | Value                              |
+| -------------------- | ---------------------------------- |
+| `VITE_CONTACT_EMAIL` | your FormSubmit.co recipient email |
+
+Vercel will automatically run `npm run build` on every push to `main` and serve the contents of `dist/` as a static deployment.
+
 ## Setup & Running Locally
 
 ### Prerequisites
@@ -92,12 +124,38 @@ This is used by the Contact form to route submissions via FormSubmit.co.
 ```bash
 npm install
 npm run dev        # development server on http://localhost:3000
-npm run build      # production build → dist/
+npm run build      # client build + SSR build + prerender → dist/
 npm run preview    # preview the production build locally
 ```
 
+### Verify SSG Output
+
+After `npm run build`, confirm the pre-rendered HTML:
+
+```bash
+# Should print a large number (full prerendered HTML, ~97 KB)
+(Get-Item dist/index.html).Length          # PowerShell
+wc -c dist/index.html                      # bash
+
+# Should output actual text content, not an empty div
+grep -o 'Shoaib Uddin' dist/index.html     # bash
+Select-String 'Shoaib Uddin' dist/index.html  # PowerShell
+
+# Should find no CDN Tailwind reference
+grep 'cdn.tailwindcss' dist/index.html     # should return nothing
+```
+
+### Confirm Google Visibility
+
+1. Deploy to Vercel (`vercel --prod`).
+2. Open [Google Search Console](https://search.google.com/search-console) → URL Inspection.
+3. Enter `https://shoaibramim.me/` and click **Test Live URL**.
+4. Under **Page** tab, check **HTML** — it should contain the full rendered text (name, sections, project titles) without requiring JavaScript execution.
+
 ## Features
 
+- **Static Site Generation** — `npm run build` pre-renders the full page to HTML via Vite SSR + `renderToString`. Crawlers receive complete content without JavaScript.
+- **Build-Time Tailwind CSS** — Tailwind v3 processed through PostCSS at build time; unused classes are tree-shaken. Production CSS is ~25 KB / ~5 KB gzipped (vs ~3 MB CDN).
 - **Data-Driven UI** — all content (profile, skills, projects, education, testimonials) sourced from `data/portfolioData.ts`; add or edit content without touching component code.
 - **Animated Background** — three animating blobs and a subtle noise texture overlay applied globally via `App.tsx`.
 - **Smooth Navigation** — Navbar uses `scrollIntoView` + `history.pushState` so direct URLs (e.g. `/projects`) deep-link to the correct section.

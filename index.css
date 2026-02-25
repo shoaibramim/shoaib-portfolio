@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bgPrimary text-textPrimary font-sans antialiased overflow-x-hidden;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bgPrimary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-bgSecondary rounded-full;
+  border: 1px solid theme("colors.bgPrimary");
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
