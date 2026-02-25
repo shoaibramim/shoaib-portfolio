@@ -72,13 +72,14 @@ export const Reviews: React.FC = () => {
                 Games!
               </h4>
               <p className="text-textSecondary mb-4 text-sm leading-relaxed">
-                I am football geek and my favorite teams are FC Barcelona and
+                I am a football geek and my favorite teams are FC Barcelona and
                 Argentina. I also love watching movies, TV shows and anime. My
                 favorite movie is Avengers: Endgame, favorite anime is Shingeki
                 no Kyojin (Attack on Titan), and my favorite TV show is Game of
                 Thrones. I also enjoy playing video games that have a strong
                 narrative or great combat mechanics, loved playing Ghost of
-                Tsushima.
+                Tsushima, swinging in Spider-Man 2, grinding in Elden Ring, and
+                many more.
               </p>
             </div>
           </motion.div>
