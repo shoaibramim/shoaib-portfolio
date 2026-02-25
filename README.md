@@ -149,7 +149,7 @@ grep 'cdn.tailwindcss' dist/index.html     # should return nothing
 
 1. Deploy to Vercel (`vercel --prod`).
 2. Open [Google Search Console](https://search.google.com/search-console) → URL Inspection.
-3. Enter `https://shoaibramim.me/` and click **Test Live URL**.
+3. Enter `https://yoursite.com/` and click **Test Live URL**.
 4. Under **Page** tab, check **HTML** — it should contain the full rendered text (name, sections, project titles) without requiring JavaScript execution.
 
 ## Features
