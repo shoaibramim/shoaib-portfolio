@@ -76,6 +76,26 @@ export const skillsData: SkillCategory[] = [
 
 export const projectsData: Project[] = [
   {
+    id: "quickhire",
+    title: "QuickHire – Full-Stack Job Board Platform",
+    description:
+      "Built a full-stack job board enabling employers to manage listings and applicants and job seekers to search and apply for jobs, implementing role-based access control and JWT authentication with a Next.js (App Router) + TypeScript + Tailwind CSS frontend and a Node.js (Express) + MongoDB + Mongoose REST API backend deployed on Vercel.",
+    image: "/QuickHire_Landing_Page.png",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "Node.js",
+      "Vercel",
+    ],
+    githubUrl: "https://github.com/shoaibramim/QuickHire",
+    liveUrl: "https://quickhirebd.vercel.app/",
+    category: "Full-Stack",
+  },
+  {
     id: "cotton-disease",
     title: "Cotton Leaf Disease Detection",
     description:
