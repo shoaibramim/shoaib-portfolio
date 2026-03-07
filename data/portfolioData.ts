@@ -97,7 +97,7 @@ export const projectsData: Project[] = [
   },
   {
     id: "cotton-disease",
-    title: "Cotton Leaf Disease Detection",
+    title: "CottonGuard - Cotton Leaf Disease Detection",
     description:
       "Fine-tuned and evaluated deep learning models for cotton leaf disease detection using Python, TensorFlow, and Scikit-learn across varied augmentation, class balancing, dropout, and learning rate settings. Deployed the best-performing model on Hugging Face Spaces with a Gradio interface and integrated it into a React-based web application hosted on Vercel, enabling image-based inference via API communication.",
     image: "/CLDD.png",
@@ -111,7 +111,7 @@ export const projectsData: Project[] = [
       "HuggingFace",
       "Vercel",
     ],
-    githubUrl: "https://github.com/shoaibramim/CLDD",
+    githubUrl: "https://github.com/shoaibramim/CottonGuard",
     liveUrl: "https://cottonguard.vercel.app/",
     manuscriptUrl:
       "https://drive.google.com/file/d/1GqX_BBJdZYkOvJ7ycFt11dqDwYU3xv4k/view?usp=sharing",
