@@ -8,7 +8,7 @@ import {
 
 export const profileData: ProfileData = {
   name: "Shoaib Uddin",
-  role: "AI/ML Enthusiast | Full Stack Developer",
+  role: "Designer first Developer | AI/ML Enthusiast",
   email: "shoaibu.ramim@gmail.com",
   location: "Chattogram, Bangladesh",
   about:
@@ -183,6 +183,14 @@ export const projectsData: Project[] = [
 export const testimonialsData: Testimonial[] = [
   {
     id: "t1",
+    name: "Dr. Martha Rose",
+    role: "Host & Producer",
+    company: "The Benefits of Therapy Podcast",
+    text: "Timely communication, patience for a newbie, detail oriented, commitment to quality work. I hired two people for the same job compared their work, and hands down, Shoaib's work was SO much better. I will rehire him!",
+    rating: 5,
+  },
+  {
+    id: "t2",
     name: "Jana Sosnowski",
     role: "Client",
     company: "Upwork",
@@ -190,7 +198,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 5,
   },
   {
-    id: "t2",
+    id: "t3",
     name: "Alexandra Lauber",
     role: "Literature Reviewer",
     company: "A NovelTea Podcast",
@@ -198,7 +206,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 5,
   },
   {
-    id: "t3",
+    id: "t4",
     name: "Jude Bunney",
     role: "Client",
     company: "Fiverr",
