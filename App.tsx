@@ -1,6 +1,6 @@
-import React from "react";
 import { Navbar } from "./components/layout/Navbar";
 import { Hero } from "./components/sections/Hero";
+import ClientOnly from "./components/ui/ClientOnly";
 import { About } from "./components/sections/About";
 import { Skills } from "./components/sections/Skills";
 import { Projects } from "./components/sections/Projects";
@@ -32,10 +32,13 @@ function App() {
       <SocialSidebar />
 
       <main className="flex-grow z-10">
-        <Hero />
+        <ClientOnly>
+          <Hero />
+        </ClientOnly>
         <About />
-        <Skills />
         <Projects />
+        <Skills />
+
         <Education />
         <Reviews />
         <Contact />

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Section } from "../ui/Section";
 import { testimonialsData } from "../../data/portfolioData";

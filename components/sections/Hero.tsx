@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { profileData } from "../../data/portfolioData";
 import { Button } from "../ui/Button";
@@ -7,28 +7,88 @@ import { FaGithub } from "react-icons/fa";
 import { MdOpenInNew } from "react-icons/md";
 import { FaFilePdf } from "react-icons/fa6";
 
+const heroIdentitySequence = [
+  { alias: "Ironman", intro: "I am" },
+  { alias: "Spiderman", intro: "I am" },
+  { alias: "Eren Yeager", intro: "Ore no nawa" },
+  { alias: "Groot", intro: "I am" },
+  { alias: "Vengeance", intro: "I am" },
+  { alias: "Batman", intro: "I am" },
+  { alias: "Daredevil", intro: "I am" },
+  { alias: "Inevitable", intro: "I am" },
+  { alias: "Kira", intro: "So da. Boku ga" },
+];
+
+const defaultIntro = "Hello, I am";
+
 export const Hero: React.FC = () => {
   const [cvOpen, setCvOpen] = useState(false);
+  const [displayName, setDisplayName] = useState(heroIdentitySequence[0].alias);
+  const [displayIntro, setDisplayIntro] = useState(
+    heroIdentitySequence[0].intro,
+  );
+  const [glitchActive, setGlitchActive] = useState(true);
+
+  useEffect(() => {
+    let index = 1;
+    const aliasIntervalMs = 250;
+    const settleMs = 600;
+    let settleTimeout: number | undefined;
+
+    const intervalId = window.setInterval(() => {
+      if (index < heroIdentitySequence.length) {
+        const { alias, intro } = heroIdentitySequence[index];
+        setDisplayName(alias);
+        setDisplayIntro(intro);
+        index += 1;
+        return;
+      }
+
+      window.clearInterval(intervalId);
+      setDisplayName(profileData.name);
+      setDisplayIntro(defaultIntro);
+      settleTimeout = window.setTimeout(() => {
+        setGlitchActive(false);
+      }, settleMs);
+    }, aliasIntervalMs);
+
+    return () => {
+      window.clearInterval(intervalId);
+      if (settleTimeout !== undefined) {
+        window.clearTimeout(settleTimeout);
+      }
+    };
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 relative z-10 w-full">
         <div className="max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
             <p className="text-accent font-medium tracking-widest uppercase mb-4 text-sm md:text-base">
-              Hello, I am
+              <span
+                className={`glitch-text ${glitchActive ? "" : "glitch-text--off"}`}
+                data-text={displayIntro}
+              >
+                {displayIntro}
+              </span>
             </p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6">
-              {profileData.name}
+              <span
+                className={`glitch-text ${glitchActive ? "" : "glitch-text--off"}`}
+                data-text={displayName}
+              >
+                {displayName}
+              </span>
             </h1>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
@@ -36,14 +96,13 @@ export const Hero: React.FC = () => {
               {profileData.role}
             </h2>
             <p className="text-lg md:text-xl text-textSecondary max-w-2xl leading-relaxed mb-10">
-              Transforming complex problems into elegant solutions. Specializing
-              in building scalable web applications and intelligent machine
-              learning models.
+              Designing human-centered interfaces and engineering intelligent
+              systems that feel simple, reliable, and delightful to use.
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
             className="flex flex-wrap gap-4"
@@ -88,7 +147,7 @@ export const Hero: React.FC = () => {
       {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center [@media(max-height:800px)]:hidden"
-        initial={{ opacity: 0 }}
+        initial={false}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
       >

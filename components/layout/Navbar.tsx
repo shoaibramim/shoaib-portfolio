@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdMenu, MdClose } from "react-icons/md";
 
@@ -54,8 +54,8 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: "About", id: "about" },
-    { name: "Skills", id: "skills" },
     { name: "Projects", id: "projects" },
+    { name: "Skills", id: "skills" },
     { name: "Education", id: "education" },
     { name: "Reviews", id: "reviews" },
   ];
@@ -116,7 +116,7 @@ export const Navbar: React.FC = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
+            initial={false}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-bgSecondary border-b border-gray-800 overflow-hidden"

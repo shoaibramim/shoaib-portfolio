@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Section } from "../ui/Section";
 import { skillsData } from "../../data/portfolioData";
@@ -7,8 +6,8 @@ export const Skills: React.FC = () => {
   return (
     <Section
       id="skills"
-      title="Technical Arsenal"
-      subtitle="Tools and technologies I use to build scalable solutions."
+      title="Engineering Toolkit"
+      subtitle="Tools and technologies I use to design and build scalable solutions."
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 gap-8">
         {skillsData.map((category, catIdx) => (

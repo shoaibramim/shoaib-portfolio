@@ -12,7 +12,7 @@ export const profileData: ProfileData = {
   email: "shoaibu.ramim@gmail.com",
   location: "Chattogram, Bangladesh",
   about:
-    "Research-oriented Computer Science and Engineering graduate with a strong focus on Artificial Intelligence and Machine Learning, particularly in computer vision and applied deep learning. Experienced in building, fine-tuning, and evaluating learning-based systems and translating them into practical, user-facing solutions.",
+    "UI/UX-focused Computer Science and Engineering graduate who bridges human-centered design with AI/ML engineering. I build intuitive experiences and learning-based systems, from rapid prototyping and design systems to model development, evaluation, and deployment into usable products.",
   socials: {
     linkedin: "https://linkedin.com/in/shoaibramim",
     github: "https://github.com/shoaibramim",
@@ -20,59 +20,6 @@ export const profileData: ProfileData = {
     behance: "https://www.behance.net/shoaibramim",
   },
 };
-
-export const skillsData: SkillCategory[] = [
-  {
-    title: "Machine Learning & AI",
-    skills: [
-      { name: "Deep Learning" },
-      { name: "Computer Vision" },
-      { name: "LLMs & GenAI" },
-      { name: "TensorFlow" },
-      { name: "PyTorch" },
-      { name: "Scikit-Learn" },
-    ],
-  },
-  {
-    title: "Frontend Development",
-    skills: [
-      { name: "React" },
-      { name: "Next.js" },
-      { name: "TypeScript" },
-      { name: "Tailwind CSS" },
-      { name: "Framer Motion" },
-    ],
-  },
-  {
-    title: "Backend & Database",
-    skills: [
-      { name: "Python" },
-      { name: "Firebase" },
-      { name: "MySQL" },
-      { name: "Node.js" },
-      { name: "FastAPI" },
-      { name: "MongoDB" },
-    ],
-  },
-  {
-    title: "DevOps & Tools",
-    skills: [
-      { name: "Git & GitHub" },
-      { name: "Docker" },
-      { name: "CI/CD" },
-      { name: "Linux" },
-    ],
-  },
-  {
-    title: "Design & Media",
-    skills: [
-      { name: "Figma (UI/UX)" },
-      { name: "Canva" },
-      { name: "Adobe Tools" },
-      { name: "DaVinci Resolve" },
-    ],
-  },
-];
 
 export const projectsData: Project[] = [
   {
@@ -177,6 +124,79 @@ export const projectsData: Project[] = [
     figmaUrl:
       "https://www.figma.com/design/srv5efCd47DGTslEQpASno/Result-Processing-System-UI-Draft?node-id=0-1&t=hCgpyZJwRKfgPhcH-1",
     category: "Frontend",
+  },
+];
+
+export const skillsData: SkillCategory[] = [
+  {
+    title: "UI Design",
+    skills: [
+      { name: "Figma" },
+      {name: "Google Stitch"},
+      { name: "Adobe Illustrator" },
+      {name: "Google AI Studio"},
+      {name: "Claude Design"},
+      { name: "Canva" },
+    ],
+  },
+  {
+    title: "Machine Learning & AI",
+    skills: [
+      { name: "Deep Learning" },
+      { name: "Computer Vision" },
+      { name: "LLMs & GenAI" },
+      { name: "TensorFlow" },
+      { name: "PyTorch" },
+      { name: "Scikit-Learn" },
+      {name: "RAG"},
+      {name: "Prompt Engineering"},
+    ],
+  },
+  {
+    title: "Frontend Development",
+    skills: [
+      { name: "React" },
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Tailwind CSS" },
+      {name: "Shadcn UI"},
+      { name: "Framer Motion" },
+    ],
+  },
+  {
+    title: "Backend & Database",
+    skills: [
+      { name: "Python" },
+      { name: "Firebase" },
+      {name: "NoSQL"},
+      { name: "MySQL" },
+      { name: "Node.js" },
+      { name: "FastAPI" },
+      { name: "MongoDB" },
+      {name: "Mongoose"},
+      {name: "Express.js"},
+    ],
+  },
+  {
+    title: "DevOps & Tools",
+    skills: [
+      { name: "Git & GitHub" },
+      { name: "Docker" },
+      { name: "CI/CD" },
+      { name: "Linux" },
+      {name: "Vercel"},
+      {name: "Hugging Face Spaces"},
+    ],
+  },
+  {
+    title: "Others",
+    skills: [
+      { name: "DaVinci Resolve Studio" },
+      { name: "Adobe Photoshop" },
+      { name: "Communication" },
+      { name: "Collaboration" },
+      { name: "Problem-Solving" },
+    ],
   },
 ];
 
