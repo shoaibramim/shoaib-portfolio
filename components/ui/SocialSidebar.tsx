@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin, FaBehance } from "react-icons/fa";
 import { profileData } from "../../data/portfolioData";
@@ -43,14 +44,16 @@ export const SocialSidebar: React.FC = () => {
    * `yOffset` – amount of pixels the sidebar is pushed *below* its natural
    * centred position.
    */
-  const initialOffset =
-    typeof window !== "undefined" ? window.innerHeight * 0.3 : 200;
-
-  const [yOffset, setYOffset] = useState(initialOffset);
+  // Use a stable initial value during SSR to avoid hydration mismatch.
+  const [yOffset, setYOffset] = useState(200);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   // Scroll-based upward travel
   useEffect(() => {
+    // Set the initial offset on the client after hydration.
+    const initial = window.innerHeight * 0.3;
+    setYOffset(initial);
+
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const travelThreshold =
@@ -91,7 +94,7 @@ export const SocialSidebar: React.FC = () => {
         {!isFooterVisible && (
           <motion.div
             key="social-sidebar"
-            initial={{ opacity: 0, x: 48, y: initialOffset }}
+            initial={false}
             animate={{ opacity: 1, x: 0, y: yOffset }}
             exit={{
               opacity: 0,
@@ -132,7 +135,7 @@ export const SocialSidebar: React.FC = () => {
                       absolute inset-0 rounded-full
                       bg-accent/10 blur-[6px] -z-10
                     "
-                    initial={{ opacity: 0 }}
+                    initial={false}
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.2 }}
                   />

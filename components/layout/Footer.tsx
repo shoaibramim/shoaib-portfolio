@@ -1,4 +1,3 @@
-import React from "react";
 import { profileData } from "../../data/portfolioData";
 import { FaGithub, FaLinkedin, FaBehance } from "react-icons/fa";
 

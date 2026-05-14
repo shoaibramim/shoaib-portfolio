@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "../ui/Section";
 import { Button } from "../ui/Button";
@@ -127,7 +127,7 @@ export const Contact: React.FC = () => {
             <AnimatePresence>
               {status === "success" && (
                 <motion.div
-                  initial={{ opacity: 0 }}
+                  initial={false}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   className="absolute inset-0 bg-bgSecondary/95 backdrop-blur-sm z-10 flex flex-col items-center justify-center text-center p-6"
@@ -194,7 +194,6 @@ export const Contact: React.FC = () => {
                 name="message"
                 rows={4}
                 required
-                value={formData.message}
                 onChange={handleChange}
                 className="w-full bg-bgPrimary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-none"
                 placeholder="Tell me about your project..."

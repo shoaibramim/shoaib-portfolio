@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Project } from "../../types";
 import { FaGithub, FaTimes } from "react-icons/fa";
@@ -35,7 +35,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           {/* Backdrop — fixed below navbar */}
           <motion.div
             key="modal-backdrop"
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
@@ -46,7 +46,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           {/* Panel container — pointer-events-none so clicks on empty area hit the backdrop */}
           <motion.div
             key="modal-panel-container"
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
@@ -55,7 +55,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             {/* Modal Panel */}
             <motion.div
               key="modal-panel"
-              initial={{ opacity: 0, scale: 0.93, y: 32 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}

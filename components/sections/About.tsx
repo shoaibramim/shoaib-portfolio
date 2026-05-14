@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Section } from "../ui/Section";
 import { profileData } from "../../data/portfolioData";
@@ -7,31 +6,31 @@ import { MdMemory, MdCode, MdScience } from "react-icons/md";
 export const About: React.FC = () => {
   const cards = [
     {
+      title: "UI/UX Engineering",
+      icon: (
+        <span className="text-accent mb-4 block">
+          <MdScience size={32} />
+        </span>
+      ),
+      desc: "Designing clear user flows, crafting design systems, and building polished interfaces with React and Tailwind CSS.",
+    },
+    {
       title: "AI & Deep Learning",
       icon: (
         <span className="text-accent mb-4 block">
           <MdMemory size={32} />
         </span>
       ),
-      desc: "Architecting and training neural networks for computer vision, NLP, and predictive modeling.",
+      desc: "Building and evaluating intelligent systems across computer vision, LLMs, and applied deep learning.",
     },
     {
-      title: "Full Stack Engineering",
+      title: "Full Stack Development",
       icon: (
         <span className="text-accent mb-4 block">
           <MdCode size={32} />
         </span>
       ),
-      desc: "Building robust, scalable architectures using React, Next.js, Firebase, MongoDB, FastAPI, and robust databases.",
-    },
-    {
-      title: "Research & Experimentation",
-      icon: (
-        <span className="text-accent mb-4 block">
-          <MdScience size={32} />
-        </span>
-      ),
-      desc: "Bridging the gap between academic research and production-ready technological solutions.",
+      desc: "Designing and building scalable web applications from the ground up, with a focus on performance, maintainability, and user experience.",
     },
   ];
 
@@ -49,21 +48,19 @@ export const About: React.FC = () => {
             {profileData.about}
           </p>
           <p className="text-textSecondary text-lg leading-relaxed">
-            Based in {profileData.location}, I thrive in environments that
-            challenge me to continuously learn and apply new methodologies.
-            Whether it's training a model to detect plant diseases or designing
-            a seamless user interface, my goal is always to deliver impactful
-            results.
+            Based in {profileData.location}, I focus on UI/UX craft and applied
+            AI/ML, shaping intuitive experiences, rapid prototypes, and
+            intelligent features that stay usable, fast, and accessible.
           </p>
 
           <div className="pt-6 border-t border-bgSecondary">
             <h3 className="text-white font-semibold mb-4">Core Focus Areas</h3>
             <ul className="space-y-3">
               {[
+                "UI/UX Design Systems",
+                "Human-centered AI/ML",
                 "Computer Vision & LLMs",
-                "Modern Web Architectures",
-                "UI/UX & Product Design",
-                "Algorithmic Problem Solving",
+                "Frontend Prototyping & Accessibility",
               ].map((item, i) => (
                 <li key={i} className="flex items-center text-textSecondary">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent mr-3"></span>

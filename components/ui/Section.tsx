@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 interface SectionProps {
@@ -23,7 +22,7 @@ export const Section: React.FC<SectionProps> = ({
     >
       {(title || subtitle) && (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}

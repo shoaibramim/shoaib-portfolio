@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 import { MdFileDownload } from "react-icons/md";
@@ -42,7 +42,7 @@ export const PDFViewerModal: React.FC<PDFViewerModalProps> = ({
           {/* Backdrop */}
           <motion.div
             key="pdf-modal-backdrop"
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
@@ -53,7 +53,7 @@ export const PDFViewerModal: React.FC<PDFViewerModalProps> = ({
           {/* Modal container */}
           <motion.div
             key="pdf-modal-container"
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
@@ -62,7 +62,7 @@ export const PDFViewerModal: React.FC<PDFViewerModalProps> = ({
             {/* Modal Panel */}
             <motion.div
               key="pdf-modal-panel"
-              initial={{ opacity: 0, scale: 0.93, y: 32 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
