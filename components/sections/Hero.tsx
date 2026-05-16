@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type FC } from "react";
 import { motion } from "framer-motion";
 import { profileData } from "../../data/portfolioData";
 import { Button } from "../ui/Button";
@@ -12,28 +12,30 @@ const heroIdentitySequence = [
   { alias: "Spiderman", intro: "I am" },
   { alias: "Eren Yeager", intro: "Ore no nawa" },
   { alias: "Groot", intro: "I am" },
+  // { alias: "The one who Knocks", intro: "I am" },
   { alias: "Vengeance", intro: "I am" },
+  { alias: "The Night", intro: "I am" },
   { alias: "Batman", intro: "I am" },
+  // { alias: "Bond. James Bond", intro: "The name is" },
   { alias: "Daredevil", intro: "I am" },
   { alias: "Inevitable", intro: "I am" },
   { alias: "Kira", intro: "So da. Boku ga" },
+  { alias: "Loki, of Asgard", intro: "I am" },
+  { alias: "Deadpool", intro: "The name's" },
 ];
 
 const defaultIntro = "Hello, I am";
 
-export const Hero: React.FC = () => {
+export const Hero: FC = () => {
   const [cvOpen, setCvOpen] = useState(false);
   const [displayName, setDisplayName] = useState(heroIdentitySequence[0].alias);
   const [displayIntro, setDisplayIntro] = useState(
     heroIdentitySequence[0].intro,
   );
-  const [glitchActive, setGlitchActive] = useState(true);
 
   useEffect(() => {
     let index = 1;
-    const aliasIntervalMs = 250;
-    const settleMs = 600;
-    let settleTimeout: number | undefined;
+    const aliasIntervalMs = 125;
 
     const intervalId = window.setInterval(() => {
       if (index < heroIdentitySequence.length) {
@@ -47,43 +49,27 @@ export const Hero: React.FC = () => {
       window.clearInterval(intervalId);
       setDisplayName(profileData.name);
       setDisplayIntro(defaultIntro);
-      settleTimeout = window.setTimeout(() => {
-        setGlitchActive(false);
-      }, settleMs);
     }, aliasIntervalMs);
 
     return () => {
       window.clearInterval(intervalId);
-      if (settleTimeout !== undefined) {
-        window.clearTimeout(settleTimeout);
-      }
     };
   }, []);
 
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 relative z-10 w-full">
-        <div className="max-w-3xl">
+        <div className="max-w-5xl 2xl:max-w-6xl">
           <motion.div
             initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
             <p className="text-accent font-medium tracking-widest uppercase mb-4 text-sm md:text-base">
-              <span
-                className={`glitch-text ${glitchActive ? "" : "glitch-text--off"}`}
-                data-text={displayIntro}
-              >
-                {displayIntro}
-              </span>
+              {displayIntro}
             </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6">
-              <span
-                className={`glitch-text ${glitchActive ? "" : "glitch-text--off"}`}
-                data-text={displayName}
-              >
-                {displayName}
-              </span>
+            <h1 className="w-full text-[clamp(2.75rem,7vw,6.5rem)] font-bold tracking-tight leading-none text-white mb-6 whitespace-nowrap">
+              {displayName}
             </h1>
           </motion.div>
 
