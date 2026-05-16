@@ -5,9 +5,11 @@ import App from "./App";
 const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Root element not found");
 
-// Production: hydrateRoot over SSG-prerendered HTML.
-// Dev: createRoot since #root is empty (no prerendering in dev).
-if (rootElement.hasChildNodes()) {
+// In development, always use createRoot (Vite doesn't prerender).
+// In production with pre-rendered HTML, hydrateRoot will match.
+const isDev = import.meta.env.DEV;
+
+if (!isDev && rootElement.hasChildNodes()) {
   ReactDOM.hydrateRoot(
     rootElement,
     <React.StrictMode>
