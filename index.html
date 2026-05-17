@@ -36,7 +36,7 @@
     <meta property="og:locale" content="en_US" />
     <meta
       property="og:image"
-      content="https://shoaibramim.me/Shoaib_Uddin.jpg"
+      content="https://shoaibramim.me/images/Shoaib_Uddin.jpg"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -52,7 +52,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://shoaibramim.me/Shoaib_Uddin.jpg"
+      content="https://shoaibramim.me/images/Shoaib_Uddin.jpg"
     />
 
     <link rel="canonical" href="https://www.shoaibramim.me/" />
@@ -79,14 +79,23 @@
       }
     </script>
 
-    <!-- Google Fonts: Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Self-hosted Poppins fonts with preload for critical weights -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/fonts/Poppins-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Poppins-SemiBold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
     />
 
+    <!-- Critical CSS - needed for initial render -->
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>

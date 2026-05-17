@@ -28,13 +28,15 @@ export const Projects: React.FC = () => {
               onClick={() => setSelectedProject(project)}
               className="group flex flex-col bg-bgSecondary rounded-2xl overflow-hidden border border-bgPrimary hover:border-accent hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 h-full cursor-pointer"
             >
-              {/* Image Container */}
-              <div className="relative h-48 overflow-hidden bg-bgPrimary">
+              {/* Image Container - with fixed aspect ratio to prevent layout shift */}
+              <div className="relative h-48 overflow-hidden bg-bgPrimary aspect-video">
                 <div className="absolute inset-0 bg-accent/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-300 z-10"></div>
                 {/* Using standard img instead of next/image for SPA compatibility */}
                 <img
                   src={project.image}
                   alt={project.title}
+                  width={361}
+                  height={240}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out opacity-80 group-hover:opacity-100"
                   loading="lazy"
                 />
