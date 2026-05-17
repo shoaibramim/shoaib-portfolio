@@ -27,7 +27,7 @@ export const projectsData: Project[] = [
     title: "QuickHire – Full-Stack Job Board Platform",
     description:
       "Built a full-stack job board enabling employers to manage listings and applicants and job seekers to search and apply for jobs, implementing role-based access control and JWT authentication with a Next.js (App Router) + TypeScript + Tailwind CSS frontend and a Node.js (Express) + MongoDB + Mongoose REST API backend deployed on Vercel.",
-    image: "/QuickHire_Landing_Page.png",
+    image: "/images/projects/quickhire/QuickHire_Landing_Page.webp",
     tags: [
       "Next.js",
       "TypeScript",
@@ -47,7 +47,7 @@ export const projectsData: Project[] = [
     title: "CottonGuard - Cotton Leaf Disease Detection",
     description:
       "Fine-tuned and evaluated deep learning models for cotton leaf disease detection using Python, TensorFlow, and Scikit-learn across varied augmentation, class balancing, dropout, and learning rate settings. Deployed the best-performing model on Hugging Face Spaces with a Gradio interface and integrated it into a React-based web application hosted on Vercel, enabling image-based inference via API communication.",
-    image: "/CLDD.png",
+    image: "/images/projects/cottonguard/CLDD.webp",
     tags: [
       "Deep Learning",
       "Computer Vision",
@@ -69,7 +69,7 @@ export const projectsData: Project[] = [
     title: "Voter Slip Generator",
     description:
       "Developed an end-to-end web application that processes layout-specific PDFs to extract Bengali text and generate structured JSON for automated voter slip creation with customizable designs, using a backend pipeline built with YOLOv8n, Python, and Tesseract OCR, exposed via APIs to a React (Vite) + TypeScript frontend deployed on Vercel.",
-    image: "/voter_slip_generator.png",
+    image: "/images/projects/voter_slip_generator/voter_slip_generator.webp",
     tags: [
       "React",
       "TypeScript",
@@ -89,7 +89,7 @@ export const projectsData: Project[] = [
     title: "Krishibid",
     description:
       "Developed a mobile application integrating a TensorFlow Lite model for real-time crop disease prediction. Designed the UI in Figma and implemented the app using React Native and Firebase, and added interactive features: real-time comments, reactions, rating, Google Maps, pagination, and animations using Reanimated and GSAP.",
-    image: "/Krishibid_UI_Promo.jpg",
+    image: "/images/projects/krishibid/Krishibid_UI_Promo.webp",
     tags: [
       "React Native",
       "Firebase",
@@ -107,7 +107,7 @@ export const projectsData: Project[] = [
     title: "ZAS Mobile App UI Design",
     description:
       "Designed an accessible, user-centered mobile interface in Figma for a multinational client, ensuring seamless alignment with functionality.",
-    image: "/ZAS_Med_App_UI.jpg",
+    image: "/images/projects/ZAS/ZAS_Med_App_UI.webp",
     tags: ["Figma"],
     figmaUrl:
       "https://www.figma.com/proto/IAOY9PeXuSZZ0XrC7V9cSA?node-id=0-1&t=1yGif17kzkJ9Cpev-6",
@@ -118,7 +118,7 @@ export const projectsData: Project[] = [
     title: "Result Processing System",
     description:
       "Designed UI wireframes in Figma and built user-focused result dashboards using React, TypeScript, Tailwind CSS, and Shadcn UI, coordinating closely with backend and database teams in an Agile environment.",
-    image: "/Teacher_View.jpg",
+    image: "/images/projects/RPS/Teacher_View.webp",
     tags: ["React", "Figma", "Shadcn UI", "Tailwind CSS", "TypeScript"],
     githubUrl: "https://github.com/ZahidHasan321/RPS_V2",
     figmaUrl:
@@ -132,10 +132,10 @@ export const skillsData: SkillCategory[] = [
     title: "UI Design",
     skills: [
       { name: "Figma" },
-      {name: "Google Stitch"},
+      { name: "Google Stitch" },
       { name: "Adobe Illustrator" },
-      {name: "Google AI Studio"},
-      {name: "Claude Design"},
+      { name: "Google AI Studio" },
+      { name: "Claude Design" },
       { name: "Canva" },
     ],
   },
@@ -148,8 +148,8 @@ export const skillsData: SkillCategory[] = [
       { name: "TensorFlow" },
       { name: "PyTorch" },
       { name: "Scikit-Learn" },
-      {name: "RAG"},
-      {name: "Prompt Engineering"},
+      { name: "RAG" },
+      { name: "Prompt Engineering" },
     ],
   },
   {
@@ -159,7 +159,7 @@ export const skillsData: SkillCategory[] = [
       { name: "Next.js" },
       { name: "TypeScript" },
       { name: "Tailwind CSS" },
-      {name: "Shadcn UI"},
+      { name: "Shadcn UI" },
       { name: "Framer Motion" },
     ],
   },
@@ -168,13 +168,13 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "Python" },
       { name: "Firebase" },
-      {name: "NoSQL"},
+      { name: "NoSQL" },
       { name: "MySQL" },
       { name: "Node.js" },
       { name: "FastAPI" },
       { name: "MongoDB" },
-      {name: "Mongoose"},
-      {name: "Express.js"},
+      { name: "Mongoose" },
+      { name: "Express.js" },
     ],
   },
   {
@@ -184,8 +184,8 @@ export const skillsData: SkillCategory[] = [
       { name: "Docker" },
       { name: "CI/CD" },
       { name: "Linux" },
-      {name: "Vercel"},
-      {name: "Hugging Face Spaces"},
+      { name: "Vercel" },
+      { name: "Hugging Face Spaces" },
     ],
   },
   {

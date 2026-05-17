@@ -29,9 +29,9 @@ export const Section: React.FC<SectionProps> = ({
           className="mb-16 text-center md:text-left"
         >
           {title && (
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 relative inline-block">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 relative inline-block min-h-[2.5rem] md:min-h-[3.75rem]">
               {title}
-              <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-accent rounded-full"></span>
+              <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-accent rounded-full flex-shrink-0"></span>
             </h2>
           )}
           {subtitle && (

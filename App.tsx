@@ -32,13 +32,10 @@ function App() {
       <SocialSidebar />
 
       <main className="flex-grow z-10">
-        <ClientOnly>
-          <Hero />
-        </ClientOnly>
+        <Hero />
         <About />
         <Projects />
         <Skills />
-
         <Education />
         <Reviews />
         <Contact />
